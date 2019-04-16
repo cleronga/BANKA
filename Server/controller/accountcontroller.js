@@ -78,14 +78,14 @@ class accountcontroller {
       }
 
  static deleteaccount(req, res) {      
-        const account = accounts.find(acc => acc.accountnumber == req.params.accountnumber && acc.balance===0);
+        const account = accounts.find(acc => acc.accountnumber == req.params.id);
         if (!account) {
           res.status(404).send({
             status: 404,
             error: 'account not found',
           });
         }
-        const index = accounts.indexOf(accn);
+        const index = accounts.indexOf(account);
         accounts.splice(index, 1);
         res.status(200).send({
           status: 200,
