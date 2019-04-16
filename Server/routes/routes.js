@@ -10,5 +10,7 @@ router.post("/api/v1/auth/signup", usercontroller.createUser);
 router.post("/api/v1/auth/login", usercontroller.login);
 router.get("/api/v1/accounts", accountcontroller.getAccounts);
 router.post('/api/v1/accounts/:id', accountcontroller.createAccount);
+router.patch('/api/v1/accounts/:id', accountcontroller.ChangeStatus);
+router.delete('/api/v1/accounts/:id', accountcontroller.deleteaccount);
 
 export default router;
