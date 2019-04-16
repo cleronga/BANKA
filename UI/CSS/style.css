@@ -1,0 +1,50 @@
+li{
+	display: inline-block;
+	 //color: red;
+
+	
+}
+
+#he{
+	background-color: darkblue;
+	//color: white;
+	font-size: 50px;
+	word-spacing: 50px;
+	text-transform: capitalize;
+	margin-top: 0px;
+   margin-bottom: 100px;
+   margin-right: 150px;
+   margin-left: 80px
+}
+a{
+	color: white;
+}
+a:hover{
+	background-color: green;
+}
+#login{
+	 border-radius: 12px;
+	background-color: bisque;
+	margin-top: 50px;
+   margin-bottom: 30px;
+   margin-right: 250px;
+   margin-left: 250px
+}
+#bol{
+	margin-top: 0px;
+   margin-bottom: 300px;
+   margin-right: 50px;
+   margin-left: 70px;
+   //background-color: lightblue;
+}
+.inp{
+	 border-radius: 10px;
+}
+#signup{
+	 border-radius: 12px;
+	background-color: bisque;
+	margin-top: 50px;
+   margin-bottom: 30px;
+   margin-right: 400px;
+   margin-left: 250px;
+}
