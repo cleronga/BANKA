@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+    <head>
+        <title>BANKA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+         <link rel="stylesheet" href="../css/banka.css">
+         <link rel="stylesheet" href="../css/style.css">
+         <link rel="stylesheet" href="../css/login.css">
+         <link rel="stylesheet" href="../css/signup.css">
+
+    </head>
+    <body>
+<div >
+       <center>  <a href="index.html"><img src="../assets/LOGO.png" style="text-align: center"> </a></center>
+      </div>
+
+        <div id="homepagecss">      
+                    
+          <li>
+                    <dl>
+                   <dt><a href="index.html"><img src="../assets/homepage.png" width="90" height="80"></a></dt>
+                   <dt><a href="login.html">LOGIN</a></dt> 
+                   <dt><a href="signup.html">SIGN UP</a></dt>
+                   <dt><a href="stafflogin.html">STAFF LOGIN</a></dt>                   
+                 </dl>
+            </li>   
+     
+            
+        </div>
+        <div id="bos">
+          <div id="signup">
+            <form action="" style="border:1px solid #ccc" name="form1">
+  <div class="container">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="lname"><b>Last Name</b></label>
+    <input type="text" placeholder="Enter your Last Name" name="lname" id="lname" required >
+
+       <label for="lname"><b>First  Name</b></label>
+    <input type="text" placeholder="Enter your First Name" name="fname" id="fname" required >
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required onfocusout="ValidateEmail()">    
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw"  id="pwd" required onfocusout="CheckPassword()">
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="pwdr" required onfocusout="pwdcheck()">
+  
+    
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="reset" class="cancelbtn" onclick="reset()">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+      <span>already have account? click <a href="login.html">here</a> to sign in</span>
+    </div>
+  </div>
+</form>
+</div>
+        </div>
+
+    </body>
+</htm
