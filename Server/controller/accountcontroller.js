@@ -24,7 +24,7 @@ class accountcontroller {
                 owner:user.id,
                 type:req.body.type,
                 status:"draft",
-                balance:0
+                Openbalance:0
         
             }
             accounts.push(account);
@@ -56,11 +56,10 @@ class accountcontroller {
         }
     }
     static ChangeStatus(req, res) {
-        const { id } = req.params;
-        const user = users.find(u =>u.isAdmin ===true);
-        const accn = accounts.find(acc => acc.accountnumber == req.body.accountnumber);
+        const { id } = req.params;        
+        const accn = accounts.find(acc => acc.accountnumber == id);
         if (accn) {
-            if(user){
+            
           (accn.status = req.body.status);
           return res.status(200).json({
             status: 200,
@@ -68,14 +67,7 @@ class accountcontroller {
                 AccountNumber:accn.accountnumber,
                 Status: accn.status
             }
-          });
-        }else{
-            res.status(400).json({
-            status:400,
-            error: "You don't have privilege"
-              });
-            
-        }
+          });        
         } else{
           res.status(400).json({
             status:400,
