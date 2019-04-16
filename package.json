@@ -1,0 +1,30 @@
+{
+  "name": "banka",
+  "version": "1.0.0",
+  "description": "Banka project",
+  "main": "../server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleronga/BANKA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cleronga/BANKA/issues"
+  },
+  "homepage": "https://github.com/cleronga/BANKA#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "babel-polyfill": "^6.26.0"
+  }
+}
