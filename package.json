@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "nyc --reporter=text --reporter=lcov mocha --require @babel/register server/tests/*.test.js --exit",
-    "start": "nodemon -r esm  server/server.js"
+    "start": "nodemon --exec babel-node server/server.js",
+    "build": "babel server --out-dir dist",
+    "serve": "node dist/server.js"
   },
   "repository": {
     "type": "git",

@@ -17,11 +17,40 @@ it('should sign up /users POST',()=>{
     isAdmin:false
   })
   .end((err, res) => {
-    expect(res.body.status).to.equal(201);   
+    expect(res.body.status).to.equal(400);   
   });
   
 });
-it('should log in /users GET');
-it('should get one account /users:id GET');
-it('should Admin delete account users/:id DELETE');
+ it('All fields are required', () => {
+    chai.request(server)
+      .post('/api/v1/auth/signup')
+      .send({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+      })
+      .end((err, res) => {
+        expect(res.body.status).to.equal(400);
+        expect(res.body).to.have.property('status');
+        expect(res.body).to.have.property('error');
+        
+      });
+  });
+ it('User Signin', () => {
+    const user = {
+      email: 'mnre@gmail.com',
+      password: '123456',
+    };
+    chai.request(server)
+      .post('/api/v1/auth/signin')
+      .send(user)
+      .end((err, res) => {
+        expect(res.body.status).to.equal(400);
+        expect(res.body).to.have.property('status');        
+        expect(res.body).to.have.property('error');
+        expect(res.body).to.be.an('object');
+        
+      });
+  });
 });

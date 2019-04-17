@@ -59,7 +59,7 @@ class usercontroller {
     });
 });
   }else{
-      res.status(401).send({
+      res.status(400).send({
           status:400,
           error:"User arleady has account"
       })
