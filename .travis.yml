@@ -1,7 +1,10 @@
 language: node_js
+
 node_js:
-  - "stable"
-  cache:
+
+ - "stable"
+
+cache:
 
  directories:
 
