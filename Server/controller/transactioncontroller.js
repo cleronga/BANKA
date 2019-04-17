@@ -13,6 +13,7 @@ class transactioncontroller {
         const account=accounts.find(acc=>acc.accountnumber===req.params.id);
         const status=accounts.status;        
         if(account){
+            if(status==='draft')
             const oldBalance=acc.balance;
             const newBalance=oldBalance+req.body.amout;
             const tra={

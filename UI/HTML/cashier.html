@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/admin.css">
+<style>
+body{
+  margin-left: 200px;
+}
+</style>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</head>
+<body>
+
+<div id="hee">
+   <li>     <div class="imgcontainer">
+                    <img src="../assets/LOGO.png" alt="banka logo" class="avatar">
+                     </div>
+            </li>
+             <li> <a href="cashier.html"><img src="../assets/homepage.png" width="50" height="60"></a></li>
+
+             <li> Welcome ..cashier  Name...
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn"><img src="prof.jpg" width="50" height="60"></button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">logout</a>
+    <a href="#about">profile</a>
+   
+  </div>
+</div>
+</li>            
+        </div>
+        <div>
+              <span class="task"><a href="creditfrom.html">CREDIT USER ACCOUNT</a> </br></span>
+              <span class="task"><a href="debitform.html">DEBIT USER ACCOUNT</a></br></span>
+              <span class="task"><a href="cdeleteaccount.html">DELETE ACCOUNT</a></br></span>
+              <span class="task"><a href="cvieuclient.html">DISPLAY ACCOUNTS</a></br></span>
+              <span class="task"><a href="crecord.html">CLIENT RECORDS</a></br></span>
+        </div>
+        
+
+        
+
+
+
+
+</body>
+</html>

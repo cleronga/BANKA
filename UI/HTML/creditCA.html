@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BANKA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/admin.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/signup.css">
+        
+<style>
+
+  body{
+   margin-left: 120px;
+   margin-right: 120px;
+       }
+    #check{
+      margin-right:0px;
+    }
+   
+    }
+    #hee{
+      background-color: #273;
+
+    }
+    li{
+      font-size: 25px;
+
+    }
+    ul{
+      font-size: 15px;
+    }
+   dl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+  background-color: #111;
+  
+}
+
+dt {
+  float: left;
+}
+
+dt a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 16px;
+  text-decoration: none;
+}
+
+dt a:hover:not(.active) {
+  background-color: #187;
+}
+
+li dl{
+  display: inline-block;
+}
+
+</style>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+         function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+         }
+
+         window.onclick = function(event) {
+       if (!event.target.matches('.dropbtn')) {
+         var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+              }
+           }
+        }
+      }   
+</script>
+
+    
+</head>
+<body>
+
+ <div >
+       <center>  <img src="../assets/LOGO.png" style="text-align: center"></center>
+      </div>
+
+        <div id="hee">      
+                    
+          <li>
+                    <dl>
+                   <dt><a href="creditCA.html">CREDIT  A/C</a></dt>
+                   <dt><a href="debitCA.html">DEBIT  A/C </a></dt> 
+                   <dt><a href="deleteaccountc.html">DELETE ACCOUNT</a></dt>
+                   <dt><a href="vieuclientc.html">ALL ACCOUNTS</a></dt>
+                   <dt><a href="recordbyCashier.html">HISTORY</a></dt>
+                 </dl>
+
+            </li>
+             <li> 
+      <div class="dropdown" id="check">
+    <button onclick="myFunction()" class="dropbtn"><img src="../assets/prof.jpg" width="100" height="70"></button>
+    <div id="myDropdown" class="dropdown-content">
+    <a href="login.html">logout</a>
+    <a href="profile.html">profile</a>
+    
+   
+  </div>
+</div>
+</li>            
+        </div>
+
+       <div id="bos">
+          <div id="signup">
+            <form action="" style="border:1px solid #ccc" name="form1">
+  <div class="container">
+    <h1>credit or deposit  Form</h1>  
+    <hr> 
+       <form>
+
+      <label for="account number"><b>Account number </b></label>
+    <input type="text" placeholder="Enter Client Account numbeer" name="ac" id="ac" required >    
+    <button type="submit">CHECK</button>
+    </form>
+    <label for="cid"><b>Client identification</b></label><hr>
+      <input type="text"  placeholder="Client Name" name="cname" id="cname" required disabled="true">
+    <input type="text" placeholder="Client id number"  name="cname" id="cname" required disabled="true">
+    <input type="text"  placeholder="Account type" name="actype" id="actype" required disabled="true">
+    <input type="text"  placeholder="Account Stustus" name="acstatus" id="Actstautus" required disabled="true">
+    <label for="current Balance"><b>Balance</b></label>
+    <input type="text"  name="bal" id="bal" required disabled="true"><hr>
+
+    <label for="amount"><b>Amount to deposit</b></label>
+    <input type="text" name="amount"  id="amout" required>
+
+    <div class="clearfix">
+      <button type="reset" class="cancelbtn" onclick="reset()">Cancel</button>
+      <button type="submit" class="signupbtn">SUBMIT</button>
+     
+    </div>
+  </div>
+</form>
+</div>
+        </div>
+        
+
+        
+
+
+
+
+</body>
+</html>
