@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BANKA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/admin.css">
+<style>
+
+  body{
+   margin-left: 130px;
+   margin-right: 130px;
+       }
+    #check{
+      margin-right:0px;
+    }
+   
+    }
+    #hee{
+      background-color: #273;
+
+    }
+    li{
+      font-size: 25px;
+
+    }
+    ul{
+      font-size: 15px;
+    }
+   dl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+  background-color: #111;
+  
+}
+
+dt {
+  float: left;
+}
+
+dt a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 16px;
+  text-decoration: none;
+}
+
+dt a:hover:not(.active) {
+  background-color: #187;
+}
+
+li dl{
+  display: inline-block;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+</style>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+         function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+         }
+
+         window.onclick = function(event) {
+       if (!event.target.matches('.dropbtn')) {
+         var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+              }
+           }
+        }
+      } 
+       function printDiv() {
+         window.frames["print_frame"].document.body.innerHTML = document.getElementById("printableTable").innerHTML;
+         window.frames["print_frame"].window.focus();
+         window.frames["print_frame"].window.print();
+       }    
+</script>
+
+    
+</head>
+<body>
+
+ <div >
+       <center> <img src="../assets/LOGO.png" style="text-align: center"></center>
+      </div>
+
+        <div id="hee">      
+                    
+          <li>
+                    <dl>
+                   <dt><a href="creditCA.html">CREDIT  A/C</a></dt>
+                   <dt><a href="debitCA.html">DEBIT  A/C </a></dt> 
+                   <dt><a href="deleteaccountc.html">DELETE ACCOUNT</a></dt>
+                   <dt><a href="vieuclientc.html">ALL ACCOUNTS</a></dt>
+                   <dt><a href="recordbyCashier.html">HISTORY</a></dt>
+                 </dl>
+
+            </li>
+             <li> 
+      <div class="dropdown" id="check">
+    <button onclick="myFunction()" class="dropbtn"><img src="../assets/prof.jpg" width="100" height="70"></button>
+    <div id="myDropdown" class="dropdown-content">
+    <a href="login.html">logout</a>
+    <a href="profile.html">profile</a>
+    
+   
+  </div>
+</div>
+</li>            
+        </div>
+        <hr>
+        <div>
+          <FORM>
+            <label for="VIEU"><b>FILTER CLIENT BY </b></label>:</BR>
+              <label for="VIEU"><b>ACCOUNT STATUS </b></label>
+              <input type="checkbox" checked="checked" name="fstatus" style="margin-bottom:15px">             
+            <select>
+              <option>ACTIVE</option>
+              <option>DORMANT</option>
+              <option>DRAFT</option>
+            </select></br>
+            <label for="VIEU"><b>ACCOUNT   TYPE </b></label>
+              <input type="checkbox" checked="checked" name="factype" style="margin-bottom:15px">             
+            <select>
+              <option>CURRENT</option>
+              <option>SAVING</option>             
+            </select></br>
+            <label for="VIEU"><b></b></label>
+            <label for="VIEU"><b>BALANCE BETWEEN </b></label> 
+            <input type="checkbox" checked="checked" name="fstatus" style="margin-bottom:15px">
+            <input type="text" name="b1"> AND <input type="text" name="b1"></BR>
+               
+            <span style="background-color:red;"><button TYPE="reset" name="disbystatus">CANCEL </button></span>
+            <span style="background-color:green;"><button TYPE="button" name="disbystatus">APPLY </button></span>
+
+          </FORM>
+          <hr>
+          <div id="printableTable">
+          <h2>LIST OF CLIENT</h2>
+          <div id="printableTable">
+
+<table style="border-collapse: collapse;" border="1">
+  <tr>
+    <th>NO</th>
+    <th>ACCOUNT NUMBER</th>
+    <th>TYPE OF ACCOUNT</th>
+    <th>CLIENT NAME</th>
+    <th>CLIENT ID</th>
+    <th>ADRRESS</th>
+    <th>ACCOUNT STATUS</th>
+    <th>BALANCE</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td> xx-yyyyy-zz</td>
+    <td>SAVING</td>
+    <td>Maria Anders</td>
+    <td>1234567890123456</td>
+    <td>KIGALI</td>
+    <td>ACTIVE</td>
+    <TD>yyyyyy</TD>
+  </tr>
+  <tr>
+     <td>2</td>
+    <td> xx-yyyyy-zz</td>
+    <td>SAVING</td>
+    <td>Maria Anders</td>
+    <td>1234567890123456</td>
+    <td>KIGALI</td>
+    <td>DORMANT</td>
+    <TD>yyyyyy</TD>
+  </tr>
+  <tr>
+    
+  </tr>
+</table>
+</div>
+   <iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+        </div> 
+        <button class="Button Button--outline" onclick="printDiv()">Print</button>
+        </div>
+        
+
+        
+
+
+
+
+</body>
+</html>

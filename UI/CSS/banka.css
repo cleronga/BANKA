@@ -1,57 +1,15 @@
-.hee{
-    overflow: hidden;
-    background-color: #e9e9e9;
-    margin-left: 150px;
-    margin-right: 150px;
-  }
+body{
+  margin-left: 200px;
+  margin-right: 200px;
+  
+      }
   li{
     display: inline-block;
-    font-size: 20px;
-    
+    font-size: 20px;    
   }
   ol{
     display: inherit;
-  }
-   
-  .dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown a:hover {background-color: #ddd;}
-  
-  .show {display: block;}
-  
+  }   
   .task {
     
     color: white; 
@@ -60,27 +18,12 @@
     cursor: pointer;
   }
   .task a:hover {background-color: #ddd;}
-
-  body{
-    margin-left: 150px;
-    margin-right: 150px;
-    background-image: src("../assets/gene.jpg");
-     }
-     #check{
-       margin-left: 130px;
-     }
-     .tr1{
-       margin-left: 70px;
-       font-size: 50px;
-     }
-     #homepagecss{
-       background-color: #e9e9e9;
-     }
-      #check{
-      margin-right:0px;
+  
+   #check{
+      margin-right:100px;
     }
    
-    }
+    
     #hee{
       background-color: #273;
 
@@ -97,10 +40,8 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  
-  background-color: #273;
-  
+  overflow: hidden;  
+  background-color: #273;  
 }
 
 dt {
