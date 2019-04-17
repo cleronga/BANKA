@@ -10,6 +10,7 @@ router.get("/api/v1/users", usercontroller.getUser);
 router.post("/api/v1/auth/signup", usercontroller.createUser);
 router.post("/api/v1/auth/login", usercontroller.login);
 
+
 router.get("/api/v1/accounts", accountcontroller.getAccounts);
 router.post('/api/v1/accounts/:id', accountcontroller.createAccount);
 router.patch('/api/v1/accounts/:id', accountcontroller.ChangeStatus);
