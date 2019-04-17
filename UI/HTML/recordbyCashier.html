@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BANKA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/admin.css">
+<style>
+
+  body{
+   margin-left: 130px;
+   margin-right: 130px;
+       }
+    #check{
+      margin-right:0px;
+    }
+   
+    }
+    #hee{
+      background-color: #273;
+
+    }
+    li{
+      font-size: 25px;
+
+    }
+    ul{
+      font-size: 15px;
+    }
+   dl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+  background-color: #111;
+  
+}
+
+dt {
+  float: left;
+}
+
+dt a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 30px 16px;
+  text-decoration: none;
+}
+
+dt a:hover:not(.active) {
+  background-color: #187;
+}
+
+li dl{
+  display: inline-block;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+         function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+         }
+
+         window.onclick = function(event) {
+       if (!event.target.matches('.dropbtn')) {
+         var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+              }
+           }
+        }
+      } 
+             function printDiv() {
+         window.frames["print_frame"].document.body.innerHTML = document.getElementById("printableTable").innerHTML;
+         window.frames["print_frame"].window.focus();
+         window.frames["print_frame"].window.print();
+       }   
+</script>
+
+    
+</head>
+<body>
+
+ <div >
+       <center>  <a href="welcomecashier.html"><img src="../assets/LOGO.png" style="text-align: center"> </a></center>
+      </div>
+
+        <div id="hee">      
+                    
+          <li>
+                    <dl>
+                   <dt><a href="creditCA.html">CREDIT  A/C</a></dt>
+                   <dt><a href="debitCA.html">DEBIT  A/C </a></dt> 
+                   <dt><a href="deleteaccountc.html">DELETE ACCOUNT</a></dt>
+                   <dt><a href="vieuclientc.html">ALL ACCOUNTS</a></dt>
+                   <dt><a href="recordbyCashier.html">HISTORY</a></dt>
+                 </dl>
+
+            </li>
+             <li> 
+      <div class="dropdown" id="check">
+    <button onclick="myFunction()" class="dropbtn"><img src="../assets/prof.jpg" width="100" height="70"></button>
+    <div id="myDropdown" class="dropdown-content">
+    <a href="login.html">logout</a>
+    <a href="profile.html">profile</a>
+    
+   
+  </div>
+</div>
+</li>            
+        </div>
+<hr>
+       
+          <FORM>
+            <lebel ><b>ENTER ACCOUNT NUMBER</b></lebel><input type="Text" name="account"></br></br></br>
+            <label for="VIEU"><b>GET TRANSACTION FROM <input TYPE="DATE" id="FD" name="fd"/>  to <input TYPE="date" id="td" name="td"/></b></label>:
+            <button TYPE="button" name="disbystatus">SEARCH </button>
+          </FORM>
+          <HR>
+            <div id="printableTable">
+         <center> <h2>TRANSACTION  RECORDS</h2></center>
+
+         <div id="printableTable">
+    <table style="border-collapse: collapse;" border="1">
+  <tr>
+    
+    <th> TRANSACTION DATE</th>    
+    <th>A/C TYPE</th>
+    <th>ACCOUNT NUMBER</th>
+    <th>TRANSACTION TYPE</th>
+    <th>CASHIER NAME</th>   
+    <th>AMOUNT</th>
+    <th> OLD BALANCE</th>
+    <th>NEW BALANCE</th>
+    
+    
+  </tr>
+  
+  <tr>
+     <td></td>
+     <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>    
+    <td></td>
+    <TD></TD>
+  </tr>
+   <tr>
+     <td></td>
+     <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>    
+    <td></td>
+    <TD></TD>
+  </tr>
+ 
+</table>
+</div>
+   <iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+        </div> 
+        <button class="Button Button--outline" onclick="printDiv()">Print</button> 
+
+ 
+
+        
+
+        
+
+
+
+
+</body>
+</html>

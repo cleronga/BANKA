@@ -27,6 +27,11 @@ class usercontroller {
           status: 400,
           message: 'Last Name is required',
         });
+      }  if (!req.body.password) {
+        return res.status(400).send({
+          status: 400,
+          message: 'password  is required',
+        });
       }  
     const { email,firstName,lastName,password, type } = req.body;
   

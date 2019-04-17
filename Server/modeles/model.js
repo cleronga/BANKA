@@ -1,5 +1,3 @@
-User.model
-
 const model={
 	 users=[{
    id:Intiger,
@@ -18,7 +16,7 @@ const model={
   owner: Integer,
   type: String,
   status: String,
-  Balance: boolean
+  Balance: float
      }
   ],
    transaction=[
@@ -32,5 +30,5 @@ const model={
   oldBalance:Float,
   newBalance:Float 
      }
-  ] 
+  ]
 }
