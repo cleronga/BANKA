@@ -13,8 +13,7 @@ class transactioncontroller {
         const account=accounts.find(acc=>acc.accountnumber===req.params.id);
         const status=accounts.status;        
         if(account){
-            if(status==='draft')
-            const oldBalance=acc.balance;
+           const oldBalance=account.balance;
             const newBalance=oldBalance+req.body.amout;
             const tra={
                 id:Date.now(),
@@ -30,6 +29,11 @@ class transactioncontroller {
                 status:200,
                 data:tra
             })
+        }else{
+            res.status(400).send({
+                status:400,
+                error:"Account not found"
+            });
         }
     }
     static DebitAccount(req,res){
