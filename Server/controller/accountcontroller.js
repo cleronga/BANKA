@@ -71,7 +71,7 @@ class accountcontroller {
         } else{
           res.status(400).json({
             status:400,
-            error: "status not updated"
+            error: "Account not updated"
           });
         }
 
