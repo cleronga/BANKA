@@ -1,5 +1,6 @@
 import users from '../db/user.db';
 import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 
 class usercontroller {
   static getUser(req, res) {
@@ -10,6 +11,130 @@ class usercontroller {
     });
   }
  
+ static createAdmin(req,res){
+  const user = users.find(user => user.email === req.body.email );
+    if (!req.body.email) {
+        return res.status(400).send({
+          status: 400,
+          message: 'Email is required',
+        });
+      } if (!req.body.firstName) {
+        return res.status(400).send({
+          status: 400,
+          message: 'First Name is required',
+        });
+      } if (!req.body.lastName) {
+        return res.status(400).send({
+          status: 400,
+          message: 'Last Name is required',
+        });
+      }  if (!req.body.password) {
+        return res.status(400).send({
+          status: 400,
+          message: 'password  is required',
+        });
+      }  
+    const { email,firstName,lastName } = req.body;
+      const password=bcrypt.hashSync(req.body.password);
+    if(!user){
+      const payload={
+        email:req.body.email,
+        firstName:req.body.firstName,
+        lastName:req.body.lastName,
+        type:'staff',
+        isAdmin:true
+      }
+        
+    jwt.sign(payload, 'pr', { expiresIn: '1h' },(err, token) => { 
+      const newUser = {
+      id: Math.floor(Math.random() * 700) + 800,
+      token,
+      email,
+      firstName,
+      lastName,
+      password:password,
+      type:"staff",
+      isAdmin:true
+    };
+    
+    users.push(newUser);
+    return res.header('Authorization', token).status(201).json({
+      status: 201,
+      message: 'Admin Registered successfully',
+      data:newUser      
+    });
+ 
+});
+  }else{
+      res.status(400).send({
+          status:400,
+          error:"User arleady has account"
+      })
+  }
+
+ }
+ static createstaff(req,res){
+  const user = users.find(user => user.email === req.body.email );
+    if (!req.body.email) {
+        return res.status(400).send({
+          status: 400,
+          message: 'Email is required',
+        });
+      } if (!req.body.firstName) {
+        return res.status(400).send({
+          status: 400,
+          message: 'First Name is required',
+        });
+      } if (!req.body.lastName) {
+        return res.status(400).send({
+          status: 400,
+          message: 'Last Name is required',
+        });
+      }  if (!req.body.password) {
+        return res.status(400).send({
+          status: 400,
+          message: 'password  is required',
+        });
+      }  
+    const { email,firstName,lastName } = req.body;
+      const password=bcrypt.hashSync(req.body.password);
+    if(!user){
+      const payload={
+        email:req.body.email,
+        firstName:req.body.firstName,
+        lastName:req.body.lastName,
+        type:'staff',
+        isAdmin:false
+      }
+        
+    jwt.sign(payload, 'pr', { expiresIn: '1h' },(err, token) => { 
+      const newUser = {
+      id: Math.floor(Math.random() * 700) + 800,
+      token,
+      email,
+      firstName,
+      lastName,
+      password:password,
+      type:"staff",
+      isAdmin:false
+    };
+    
+    users.push(newUser);
+    return res.header('Authorization', token).status(201).json({
+      status: 201,
+      message: 'Staff Registered successfully',
+      data:newUser      
+    });
+ 
+});
+  }else{
+      res.status(400).send({
+          status:400,
+          error:"User arleady has account"
+      })
+  }
+
+ }
   static createUser(req, res) { 
     const user = users.find(user => user.email === req.body.email );
     if (!req.body.email) {
@@ -33,7 +158,8 @@ class usercontroller {
           message: 'password  is required',
         });
       }  
-    const { email,firstName,lastName,password, type } = req.body;
+    const { email,firstName,lastName, type } = req.body;
+    const password=bcrypt.hashSync(req.bod.password);
   
     if(!user){
         
@@ -42,12 +168,12 @@ class usercontroller {
    const jwtoken=token.split(',')
 
     const newUser = {
-      id: Date.now(),
+      id: Math.floor(Math.random() * 700) + 800,
       jwtoken,
       email,
       firstName,
       lastName,
-      password,
+      password:password,
       type:"client",
       isAdmin:false
     };
@@ -136,6 +262,80 @@ class usercontroller {
         })
     }
 
+  }
+    static loginAdmin(req,res){      
+    const user = users.find(u => u.email === req.body.email );
+    console.log(bcrypt.hashSync(req.body.password));
+    
+   
+    if(user){   
+      const compare = bcrypt.compareSync(req.body.password, user.password);
+    if (!compare){ return res.status(400).json({ status: 400, error: 'Incorrect Password' });
+    }else{
+       
+      const generate = {
+        id: user.id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        type:user.type,
+        isAdmin:user.isAdmin
+      };
+const token = jwt.sign(generate, 'pr', { expiresIn: '24h' });
+    return res.header('Authorization', `${token}`).status(200).json({
+      status: 200,
+      message: 'Log in successfully',
+      data: {
+        token,
+        generate,
+      },
+    });
+  }
+    }else{
+        res.status(400).send({
+            status:400,
+            error:"Invalid email or Password"
+        })
+    }
+  
+  
+  }
+  static loginCashier(req,res){      
+    const user = users.find(u => u.email === req.body.email );
+    console.log(bcrypt.hashSync(req.body.password));
+    
+   
+    if(user){   
+      const compare = bcrypt.compareSync(req.body.password, user.password);
+    if (!compare){ return res.status(400).json({ status: 400, error: 'Incorrect Password' });
+    }else{
+       
+      const generate = {
+        id: user.id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        type:user.type,
+        isAdmin:user.isAdmin
+      };
+const token = jwt.sign(generate, 'pr', { expiresIn: '24h' });
+    return res.header('Authorization', `${token}`).status(200).json({
+      status: 200,
+      message: 'Log in successfully',
+      data: {
+        token,
+        generate,
+      },
+    });
+  }
+    }else{
+        res.status(400).send({
+            status:400,
+            error:"Invalid email or Password"
+        })
+    }
+  
+  
   }
   
 }

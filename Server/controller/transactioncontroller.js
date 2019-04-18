@@ -11,8 +11,12 @@ class transactioncontroller {
     }
     static creditAccount(req,res){
         const account=accounts.find(acc=>acc.accountnumber===req.params.id);
-        const status=accounts.status;        
+        const status=accounts.status; 
+        const id=req.body.cashierId;
+        const user=users.find(user=>user.id===id && user.type==='staff');       
         if(account){
+            if(user){
+                if(status==='aactive'){
            const oldBalance=account.balance;
             const newBalance=oldBalance+req.body.amout;
             const tra={
@@ -26,15 +30,30 @@ class transactioncontroller {
             }
             transactions.push(tra);
             res.status.send({
+                message:'transactions was successfull completed',
                 status:200,
                 data:tra
             })
         }else{
             res.status(400).send({
+            status:400,
+            error:"Please contact Admin to active Account"
+            })
+
+        }
+        }else{
+            res.status(400).send({
                 status:400,
-                error:"Account not found"
+                error:"You don't have privillege"
             });
         }
+    }else{
+        res.status(400).send({
+            status:400,
+            error:"Account not found"
+        });
+
+    }
     }
     static DebitAccount(req,res){
         const account=accounts.find(acc=>acc.accountnumber===req.params.id);        
@@ -53,6 +72,7 @@ class transactioncontroller {
             }
             transactions.push(tra);
             res.status.send({
+                message:'transactions was successfull completed',
                 status:200,
                 data:tra
             });
