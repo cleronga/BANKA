@@ -1,1 +1,1 @@
-web: nodemon --exec babel-node banka/server/server.js
+web: nodemon --exec babel-node server/server.js
