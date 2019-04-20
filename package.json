@@ -5,7 +5,7 @@
   "main": "../server/server.js",
   "scripts": {
     "test": "nyc --reporter=text --reporter=lcov mocha --require @babel/register server/tests/*.test.js --exit",
-    "start": "nodemon --exec babel-node ../banka/server/server.js",
+    "start": "node ../banka/server/server.js",
     "coveralls": "npm test  && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
